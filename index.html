@@ -1,46 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="OdorSpaces: Visual-Olfactory Embodied Navigation in 3D Environments — CoRL 2026 project page (coming soon)." />
-  <title>OdorSpaces | CoRL 2026</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      display: grid;
-      place-items: center;
-      padding: 28px;
-      background: #f8fafc;
-      color: #172033;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-      text-align: center;
-    }
-    main { max-width: 760px; }
-    .tag {
-      display: inline-block;
-      margin-bottom: 18px;
-      padding: 8px 16px;
-      border-radius: 999px;
-      background: #e8eefb;
-      color: #3659a2;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: .04em;
-    }
-    h1 { margin: 0 0 16px; font-size: clamp(44px, 9vw, 76px); letter-spacing: -.05em; }
-    h2 { margin: 0; font-size: clamp(21px, 4vw, 30px); font-weight: 500; line-height: 1.4; }
-    p { margin: 32px 0 0; color: #657086; font-size: 17px; line-height: 1.65; }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17243c">
+  <meta name="description" content="OdorSpaces is a physics-based simulation platform and benchmark for visual-olfactory embodied navigation in realistic 3D environments.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OdorSpaces | CoRL 2026">
+  <meta property="og:description" content="See the scene. Smell the source. A physics-based benchmark for visual-olfactory embodied navigation.">
+  <meta property="og:url" content="https://odorspaces.github.io/">
+  <meta name="twitter:card" content="summary">
+  <link rel="canonical" href="https://odorspaces.github.io/">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="stylesheet" href="styles.css?v=88dfa4336c49">
+  <script type="module" src="script.js?v=fd84569c4e17"></script>
+  <title>OdorSpaces: Visual-Olfactory Embodied Navigation in 3D Environments</title>
 </head>
 <body>
-  <main>
-    <span class="tag">CoRL 2026</span>
+<a class="skip-link" href="#main">Skip to content</a>
+<main id="main">
+  <header class="project-header narrow">
+    <p class="venue">CoRL 2026</p>
     <h1>OdorSpaces</h1>
-    <h2>Visual-Olfactory Embodied Navigation<br />in 3D Environments</h2>
-    <p>Project website coming soon.</p>
-  </main>
+    <p class="paper-title">Visual-Olfactory Embodied Navigation<br>in 3D Environments</p>
+    <ul class="authors" aria-label="Authors"><li>Changyeon Lee</li><li>Kelin Yu</li><li>Zheng Wei</li><li>Shuna Ni</li><li>Ruohan Gao</li></ul>
+    <p class="affiliation">University of Maryland, College Park</p>
+    <div class="paper-links"><a href="assets/papers/odorspaces-paper.pdf" target="_blank" rel="noopener">Paper ↗</a><a href="https://github.com/changyeon2/OdorSpaces" target="_blank" rel="noopener">Code ↗</a></div>
+  </header>
+
+  <section class="teaser wide" aria-label="Project demo video">
+    <div class="project-video has-video" id="project-video">
+      <video src="assets/videos/project-demo.mp4" poster="assets/videos/project-demo-poster.jpg" controls playsinline preload="metadata" aria-label="OdorSpaces project overview">Your browser does not support embedded video. <a href="assets/videos/project-demo.mp4">Download the project video</a>.</video>
+    </div>
+    <h2 class="teaser-caption"><span class="blue">See</span> the scene. <span class="orange">Smell</span> the source.</h2>
+  </section>
+
+  <section class="paper-section narrow" id="overview">
+    <h2>Overview</h2>
+    <p><strong>Odor remains an understudied modality in embodied AI.</strong> Most machine olfaction research focuses on recognizing what a smell is. Yet odor is also spatial and temporal: airborne chemicals form concentration fields that change over space and time. In gas-leak detection, early-stage fire detection, and searches for concealed drugs, <strong>odor can be the first cue</strong>, signaling a source before it can be seen or identified. The task is then to find that source.</p>
+    <p>Finding that source requires more than following a local odor reading. Olfactory measurements are noisy, can be misleading, and must be interpreted over time, while vision reveals where the agent can move. Real-world odor transport also depends on airflow, temperature, geometry, and ventilation, making experiments difficult to reproduce and compare. <strong>OdorSpaces provides a physics-based, controllable benchmark</strong> for studying this visual-olfactory navigation problem in realistic 3D environments.</p>
+    <p>The benchmark spans <strong>17 Replica and 25 Matterport3D environments</strong>, from compact rooms to complex indoor layouts.</p>
+    <div class="environment-mosaics" aria-label="Representative supported environments">
+      <figure class="environment-mosaic" tabindex="0">
+        <figcaption><strong>Replica</strong><span><b>17</b> scenes</span></figcaption>
+        <img class="environment-image" src="assets/environment-overview/replica.jpg?v=f4fd98938454" width="1600" height="1200" loading="lazy" decoding="async" alt="Twelve representative Replica scene layouts">
+      </figure>
+      <figure class="environment-mosaic" tabindex="0">
+        <figcaption><strong>Matterport3D</strong><span><b>25</b> scenes</span></figcaption>
+        <img class="environment-image" src="assets/environment-overview/mp3d.jpg?v=e18e47d3de38" width="1600" height="1200" loading="lazy" decoding="async" alt="Twelve representative Matterport3D scene layouts">
+      </figure>
+    </div>
+    <p class="environment-note">Representative layouts from the two scene collections.</p>
+  </section>
+
+  <section class="paper-section wide" id="environments">
+    <h2>Two Safety Tasks, Two Odor Regimes</h2>
+    <div class="task-descriptions">
+      <article><h3>Invisible gas leak</h3><p class="odor-cue">Odor cue: <strong>Propane (C₃H₈)</strong></p><p>We simulate a <strong>propane gas leak</strong> to model liquefied petroleum gas (LPG) leakage. Propane is the principal component of LPG, which is typically odorized for human detectability. We use simulated propane gas density as the olfactory cue. Released horizontally from the source, propane is denser than air and settles near the floor, forming a low-altitude odor field.</p></article>
+      <article><h3>Early-stage fire</h3><p class="odor-cue">Odor cue: <strong>Carbon dioxide (CO₂)</strong></p><p>We simulate a <strong>methanol pool fire</strong>, a canonical setting in fire modeling and FDS validation studies. Combustion-generated carbon dioxide rises through heat-driven buoyancy, and we use its density as a surrogate olfactory cue for fire-related burning odor.</p></article>
+    </div>
+    <div class="offline-tabs" role="group" aria-label="Choose precomputed gas visualization"><button type="button" data-offline="propane" aria-pressed="true" class="selected">Propane gas leak</button><button type="button" data-offline="methanol" aria-pressed="false">Methanol pool fire</button></div>
+    <iframe id="offline-viewer" class="offline-viewer" src="offline/propane.html?v=929568eb56e8" title="Propane gas dispersion: interactive offline 3D volume visualization" loading="lazy"></iframe>
+    <p class="figure-caption">Drag to rotate the scene and use the timeline to inspect dispersion. Both viewers show relative values within each timestep.</p>
+  </section>
+
+  <section class="paper-section narrow" id="simulation">
+    <h2>Physics-Based Odor Simulation</h2>
+    <p><strong>Fire Dynamics Simulator (FDS)</strong> is a computational fluid dynamics solver developed by NIST for low-speed, thermally driven flows. Its predictive capability has been assessed under ASTM E1355 and documented in the NIST FDS Validation Guide, with validation studies covering compartment-fire smoke, toxic-gas concentrations, and atmospheric gas dispersion.</p>
+    <p>We use FDS to simulate the time-varying 3D gas-density fields for our propane gas-leak and methanol pool-fire scenarios. We then spatially align these fields with Replica and Matterport3D scenes in <strong>Habitat-Sim</strong>, so agents can sample local gas density while receiving visual observations and navigating the same environment.</p>
+  </section>
+
+  <section class="paper-section wide" id="method">
+    <h2>Visual-Olfactory Navigation Policy Architecture</h2>
+    <figure class="method-figure"><a href="assets/figures/policy-architecture.pdf" target="_blank" rel="noopener" aria-label="Enlarge the policy architecture"><img src="assets/figures/policy-architecture.svg" width="992" height="490" loading="lazy" alt="Depth, gas density, and pose history are encoded and fused, then passed through recurrent memory to policy and value heads."></a></figure>
+    <p class="results-discussion">Our multimodal policy combines <strong>depth observations, olfactory measurements, and pose history</strong> with <strong>recurrent memory</strong> for action prediction.</p>
+  </section>
+
+  <section class="paper-section wide" id="results">
+    <h2>Results</h2>
+    <p class="results-metric">Metric: SPL (%) ↑</p>
+    <div class="results-scroll" tabindex="0" role="region" aria-label="Results table; scroll horizontally on small screens">
+      <table class="results-table"><caption>Mean SPL (%) ± standard deviation across three test seeds. Highest mean in each column is bold.</caption><thead><tr><th rowspan="2" scope="col">Method</th><th colspan="2" scope="colgroup">Propane gas leak</th><th colspan="2" scope="colgroup">Methanol pool fire</th></tr><tr><th scope="col">Replica</th><th scope="col">Matterport3D</th><th scope="col">Replica</th><th scope="col">Matterport3D</th></tr></thead><tbody>
+        <tr><th scope="row">Temporal Gradient</th><td>4.59 <span>± 0.44</span></td><td>1.83 <span>± 0.96</span></td><td>0.00 <span>± 0.00</span></td><td>0.00 <span>± 0.00</span></td></tr>
+        <tr><th scope="row">Chemotactic</th><td>17.33 <span>± 2.50</span></td><td>27.10 <span>± 2.70</span></td><td>0.00 <span>± 0.00</span></td><td>0.00 <span>± 0.00</span></td></tr>
+        <tr><th scope="row">Biomimetic (Moth)</th><td>36.11 <span>± 0.51</span></td><td>33.56 <span>± 1.69</span></td><td>0.00 <span>± 0.00</span></td><td>0.00 <span>± 0.00</span></td></tr>
+        <tr><th scope="row">DRT-RL</th><td>54.50 <span>± 5.50</span></td><td><strong class="best">65.41</strong> <span>± 5.15</span></td><td>17.58 <span>± 3.45</span></td><td>2.74 <span>± 1.83</span></td></tr>
+        <tr><th scope="row">OdorSpaces (ours)</th><td><strong class="best">65.26</strong> <span>± 6.59</span></td><td>63.82 <span>± 7.85</span></td><td><strong class="best">24.72</strong> <span>± 3.69</span></td><td><strong class="best">14.16</strong> <span>± 2.96</span></td></tr>
+      </tbody></table>
+    </div>
+    <p class="results-discussion"><strong>Our policy demonstrates competitive performance across baselines, datasets, and odor-source scenarios.</strong> The policy integrates visual observations, olfactory measurements, and navigation history with recurrent memory. These results highlight the potential of multimodal perception and spatio-temporal modeling for robust odor-guided navigation.</p>
+  </section>
+
+  <section class="paper-section wide" id="agent-comparison">
+    <h2>Compare the Agents</h2>
+    <div class="comparison-toolbar"><div class="segmented" role="group" aria-label="Choose agent comparison task"><button type="button" data-comparison="gas" class="selected" aria-pressed="true">Propane gas leak</button><button type="button" data-comparison="fire" aria-pressed="false">Methanol pool fire</button></div></div>
+    <div id="comparison-episodes" aria-live="polite"></div>
+    <noscript><p>Enable JavaScript to compare the agent recordings.</p></noscript>
+  </section>
+
+  <section class="paper-section wide" id="failure-cases">
+    <h2>Representative Failure Cases</h2>
+    <div id="failure-episodes"></div>
+    <noscript><p>Enable JavaScript to compare the failure-case recordings.</p></noscript>
+  </section>
+
+  <section class="paper-section narrow" id="citation"><div class="citation-heading"><h2>Citation</h2><button type="button" class="text-button" id="copy-citation">Copy BibTeX</button></div>
+<pre class="citation"><code id="bibtex">@inproceedings{lee2026odorspaces,
+  title     = {OdorSpaces: Visual-Olfactory Embodied Navigation
+               in 3D Environments},
+  author    = {Lee, Changyeon and Yu, Kelin and Wei, Zheng
+               and Ni, Shuna and Gao, Ruohan},
+  booktitle = {Conference on Robot Learning (CoRL)},
+  year      = {2026}
+}</code></pre>
+    <p id="copy-feedback" class="copy-feedback" role="status"></p>
+  </section>
+</main>
+<footer><p>OdorSpaces · University of Maryland, College Park · CoRL 2026</p><a href="#main">Back to top ↑</a></footer>
 </body>
 </html>

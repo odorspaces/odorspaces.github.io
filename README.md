@@ -1,3 +1,0 @@
-# OdorSpaces
-
-(placeholder)
